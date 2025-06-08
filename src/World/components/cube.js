@@ -1,4 +1,4 @@
-import { BoxGeometry, Mesh, MeshBasicMaterial } from 'https://cdn.jsdelivr.net/npm/three@0.177.0/build/three.module.js';
+import { BoxGeometry, Mesh, MeshBasicMaterial } from 'three';
 
 function createCube() {
   // create a geometry

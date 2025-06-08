@@ -1,4 +1,4 @@
-import { PerspectiveCamera } from 'https://cdn.jsdelivr.net/npm/three@0.177.0/build/three.module.js';
+import { PerspectiveCamera } from 'three';
 
 function createCamera() {
   const camera = new PerspectiveCamera(

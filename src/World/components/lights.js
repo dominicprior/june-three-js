@@ -1,3 +1,3 @@
-import { DirectionalLight } from 'https://cdn.jsdelivr.net/npm/three@0.177.0/build/three.module.js';
+import { DirectionalLight } from 'three';
 
 // To do...
