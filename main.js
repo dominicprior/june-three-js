@@ -8,6 +8,7 @@ import {
     Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial,
     Mesh, LineBasicMaterial, Line, BufferGeometry, Vector3,
 } from 'three';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.177.0/examples/jsm/controls/OrbitControls.js';
 const scene = new Scene();
 const camera = new PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new WebGLRenderer();
