@@ -1,8 +1,8 @@
-import { BoxBufferGeometry, Mesh, MeshBasicMaterial } from 'https://cdn.skypack.dev/three@0.136.2';
+import { BoxGeometry, Mesh, MeshBasicMaterial } from 'https://cdn.jsdelivr.net/npm/three@0.177.0/build/three.module.js';
 
 function createCube() {
   // create a geometry
-  const geometry = new BoxBufferGeometry(2, 2, 2);
+  const geometry = new BoxGeometry(2, 2, 2);
 
   // create a default (white) Basic material
   const material = new MeshBasicMaterial();

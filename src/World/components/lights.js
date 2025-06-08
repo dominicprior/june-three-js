@@ -1,3 +1,3 @@
-import { DirectionalLight } from 'https://cdn.skypack.dev/three@0.136.2';
+import { DirectionalLight } from 'https://cdn.jsdelivr.net/npm/three@0.177.0/build/three.module.js';
 
 // To do...
