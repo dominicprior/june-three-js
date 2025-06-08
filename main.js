@@ -14,7 +14,7 @@ const camera = new PerspectiveCamera( 75, window.innerWidth / window.innerHeight
 const renderer = new WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setPixelRatio(window.devicePixelRatio);  // so our scene will look good on HiDPI displays
-document.body.appendChild( renderer.domElement );
+document.body.append( renderer.domElement );
 const cubeGeometry = new BoxGeometry( 1, 1, 1 );
 const cubeMaterial = new MeshBasicMaterial( { color: 0x00ffa0 } );
 const lineMaterial = new LineBasicMaterial( { color: 0x0000ff } );
