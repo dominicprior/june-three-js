@@ -1,5 +1,5 @@
 console.log('dominic!');
-import { World } from './World/World.js';
+import { World } from './world/world.js';
 
 function main() {
   const container = document.querySelector('#scene-container');

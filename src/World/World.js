@@ -3,7 +3,7 @@ import { createCube } from './components/cube.js';
 import { createLights } from './components/lights.js';
 import { createScene } from './components/scene.js';
 import { createRenderer } from './systems/renderer.js';
-import { Resizer } from './systems/Resizer.js';
+import { Resizer } from './systems/resizer.js';
 import { Loop } from './systems/loop.js';
 
 // These variables are module-scoped: we cannot access them
