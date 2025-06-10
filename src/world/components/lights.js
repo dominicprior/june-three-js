@@ -8,7 +8,7 @@ function createLights() {
     'black', // dim ground color
     15, // intensity
   );
-  ambientLight.position.set(1, 0, 0);
+  // ambientLight.position.set(1, 0, 0);
   light.position.set(10, 10, 10);
   return { light, ambientLight };
 }

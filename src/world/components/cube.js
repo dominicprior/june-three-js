@@ -1,4 +1,4 @@
-import { BoxGeometry, Mesh, MeshStandardMaterial, MathUtils, TextureLoader } from 'three';
+import { BoxGeometry, Mesh, MeshStandardMaterial, MathUtils, TextureLoader, AxesHelper } from 'three';
 
 function createMaterial() {
   const textureLoader = new TextureLoader();
@@ -11,6 +11,7 @@ function createMaterial() {
 }
 
 function createCube() {
+  // const geometry = new AxesHelper(2);
   const geometry = new BoxGeometry(2, 2, 2);
   const spec = {
     color: 'purple',
