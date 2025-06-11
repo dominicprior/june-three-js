@@ -1,4 +1,6 @@
-import { BoxGeometry, Mesh, MeshStandardMaterial, MathUtils, TextureLoader } from 'three';
+import { BoxGeometry, Mesh, MeshBasicMaterial, MathUtils, TextureLoader, MeshStandardMaterial,
+  DoubleSide, LineSegments, EdgesGeometry, LineBasicMaterial,
+ } from 'three';
 
 function createMaterial() {
   const textureLoader = new TextureLoader();
