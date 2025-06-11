@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Colored Triangle Grid</title>
+  <style>body { margin: 0; }</style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js"></script>
+<script>
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  const gridSize = 10; // 10x10 grid
+  const triangleSize = 1;
+
+  const positions = [];
+  const colors = [];
+
+  const color = new THREE.Color();
+
+  for (let i = 0; i < gridSize; i++) {
+    for (let j = 0; j < gridSize; j++) {
+      // Bottom-left corner of cell
+      const x = i * triangleSize;
+      const y = j * triangleSize;
+
+      // Two triangles per square
+      // First triangle (x, y) -> (x + 1, y) -> (x, y + 1)
+      positions.push(x, y, 0);
+      positions.push(x + triangleSize, y, 0);
+      positions.push(x, y + triangleSize, 0);
+
+      color.setHSL(Math.random(), 0.7, 0.5);
+      for (let k = 0; k < 3; k++) {
+        colors.push(color.r, color.g, color.b);
+      }
+
+      // Second triangle (x + 1, y) -> (x + 1, y + 1) -> (x, y + 1)
+      positions.push(x + triangleSize, y, 0);
+      positions.push(x + triangleSize, y + triangleSize, 0);
+      positions.push(x, y + triangleSize, 0);
+
+      color.setHSL(Math.random(), 0.7, 0.5);
+      for (let k = 0; k < 3; k++) {
+        colors.push(color.r, color.g, color.b);
+      }
+    }
+  }
+
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+  const material = new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.DoubleSide });
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  camera.position.set(gridSize / 2, gridSize / 2, 15);
+  camera.lookAt(gridSize / 2, gridSize / 2, 0);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    mesh.rotation.z += 0.005;
+    renderer.render(scene, camera);
+  }
+
+  animate();
+</script>
+</body>
+</html>
