@@ -1,5 +1,7 @@
 import { createCamera } from './components/camera.js';
 import { createCube } from './components/cube.js';
+import { createSquare } from './components/square.js';
+import { createSquare2 } from './components/square2.js';
 import { createLights } from './components/lights.js';
 import { createScene } from './components/scene.js';
 import { createControls } from './systems/controls.js';
