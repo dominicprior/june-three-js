@@ -8,6 +8,7 @@ import { createControls } from './systems/controls.js';
 import { createRenderer } from './systems/renderer.js';
 import { Resizer } from './systems/resizer.js';
 import { Loop } from './systems/loop.js';
+import { createHexagon } from './components/hexagon.js';
 
 // These variables are module-scoped: we cannot access them
 // from outside the module
@@ -25,21 +26,20 @@ class World {
     loop = new Loop(camera, scene, renderer);
     container.append(renderer.domElement);
 
-    const cube = createCube();
+    const mesh = createHexagon(20, 0.15);
     const lights = createLights();
-    // loop.updatables.push(cube);
+    // loop.updatables.push(mesh);
     // loop.updatables.push(camera);
     loop.updatables.push(controls);
   //   controls.addEventListener('change', () => {
   //     this.render();
   //  });
-    scene.add(cube, lights.light, lights.ambientLight);
+    scene.add(mesh, lights.light, lights.ambientLight);
 
     const resizer = new Resizer(container, camera, renderer);
   }
 
   render() {
-    // draw a single frame
     renderer.render(scene, camera);
   }
   start() {
