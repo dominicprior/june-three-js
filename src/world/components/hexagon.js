@@ -1,6 +1,6 @@
 // Create a hexagon made of small, randomly coloured triangles.
 
-import { BufferGeometry, MeshBasicMaterial,
+import { BufferGeometry, MeshBasicMaterial, MeshStandardMaterial,
     Mesh, Float32BufferAttribute, Color, DoubleSide, BufferAttribute,
  } from 'three';
 
@@ -27,8 +27,13 @@ function createHexagon(n, scale) {
     geometry.setAttribute('position', new Float32BufferAttribute(vertices, 3));
     geometry.setAttribute('color', new Float32BufferAttribute(colors, 3));
 
-    const material = new MeshBasicMaterial({ vertexColors: true, side: DoubleSide });
+    const material = new MeshStandardMaterial({
+        vertexColors: true,
+        side: DoubleSide,
+        // color: 'purple',
+    });
     const mesh = new Mesh(geometry, material);
+    // mesh.receiveShadow = true;
     return mesh;
 }
 
@@ -52,7 +57,7 @@ function addRowOfTriangles(vertices, numTriangles, rowNum, up) {
 function addVertex(vertices, x, y) {
     const r = Math.hypot(x, y);
     const z = 15000 / (r*r*r + 1000);
-    vertices.push(x, y, z);
+    vertices.push(x, y, 0);
 }
 
 export { createHexagon };

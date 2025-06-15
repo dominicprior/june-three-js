@@ -34,7 +34,7 @@ class World {
   //   controls.addEventListener('change', () => {
   //     this.render();
   //  });
-    scene.add(mesh, lights.light, lights.ambientLight);
+    scene.add(mesh, createCube(), lights[0], lights[1]);
 
     const resizer = new Resizer(container, camera, renderer);
   }
