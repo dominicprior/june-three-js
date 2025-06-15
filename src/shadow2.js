@@ -1,15 +1,5 @@
-// console.log('dominic!');
-// import { World } from './world/world.js';
+// A donut casting a shadow on the ground.
 
-// function main() {
-//   const container = document.querySelector('#scene-container');
-//   const world = new World(container);
-//   world.start();
-// }
-
-// main();
-
-////////////////////
 import * as THREE from 'three';
 console.log('dominic shadow!');
 const container = document.querySelector('#scene-container');
@@ -30,8 +20,6 @@ container.append(renderer.domElement);
 
 const donutGeometry = new THREE.TorusGeometry(100, 50, 8, 20);
 const donutMaterial = new THREE.MeshStandardMaterial();
-// donutMaterial.emissive.setRGB(0.8, 0.1, 0.1);
-// donutMaterial.specular.setRGB(0.9, 0.9, 0.9);
 const donut = new THREE.Mesh(donutGeometry, donutMaterial); 
 scene.add(donut);
 donut.castShadow = true;
@@ -53,7 +41,6 @@ sunlight.shadow.mapSize.height = 16;
 // scene.add( new THREE.CameraHelper( sunlight.shadow.camera ) );
 
 const groundGeometry = new THREE.PlaneGeometry(1000, 1000);
-// const groundMaterial = new THREE.MeshPhongMaterial();
 const groundMaterial = new THREE.MeshStandardMaterial({color: 'pink'});
 const ground = new THREE.Mesh(groundGeometry, groundMaterial);
 scene.add(ground);
