@@ -12,6 +12,7 @@
 ////////////////////
 import * as THREE from 'three';
 console.log('dominic shadow!');
+const container = document.querySelector('#scene-container');
 
 const scene = new THREE.Scene();
 const aspect_ratio = window.innerWidth / window.innerHeight;
@@ -25,7 +26,7 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.BasicShadowMap;
 // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.append(renderer.domElement);
+container.append(renderer.domElement);
 
 const donutGeometry = new THREE.TorusGeometry(100, 50, 8, 20);
 const donutMaterial = new THREE.MeshStandardMaterial();
